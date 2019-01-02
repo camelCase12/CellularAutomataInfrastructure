@@ -30,8 +30,8 @@ class CellularGrid {
   
   float getNeighborValueTotal(Cell cell) { // Gathers the combined value of all neighboring cells
      float neighborValue = 0;
-     for(int i = -1; i < 1; i++) {
-        for(int j = -1; j < 1; j++) {
+     for(int i = -1; i <= 1; i++) {
+        for(int j = -1; j <= 1; j++) {
          try {
            if(!(i == 0 && j == 0)) {
             neighborValue += cells[cell.x + i][cell.y + j].value; 
