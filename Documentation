@@ -1,0 +1,19 @@
+The Cellular Automata Infrastructure I created is a simple program written in processing (java-based) for developing cellular automata. 
+
+The classes contained are the cell, CellularGrid, RGBValue, and valueColorPallet.
+
+The cell class is the building block for the grid, containing an x and y position, as well as a boolean value for whether it is alive, and
+a float value for more complex automata.
+The CellularGrid class contains a 2D array of cells, the size of which is determined by the user at instantiation. The class contains
+functions that return the number of living cells around it (getLivingNeighborCount) which takes a parameter of any cell, and that return
+the combined float value of cells around it (getNeighborValueTotal) which takes the same parameter.
+RGBValue is an object which holds three integer values, for red, green, and blue, used in the valueColorPallet class.
+valueColorPallet is an array of RGBValues, which can be used to render grids to the screen based on integer values of cells.
+
+The methods contained are renderGridSimple, and renderGridComplex.
+renderGridSimple takes a parameter of a cellular grid and fills the screen with a grid of evenly widthed and heighted rectangles, green for 
+alive and red for dead, to represent the cellular grid.
+renderGridComplex takes a parameter of a cellular grid and fills the screen like earlier, but uses the float value of each cell as an index
+for valueColorPallet to determine what color the cell should be rendered with. Using non-integer float values for cells should not be done
+unless the user is going to custom-render cells to the screen, as the infrastructure's built in rendering cannot handle non-integer
+cell values.
